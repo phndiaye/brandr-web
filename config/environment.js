@@ -28,6 +28,14 @@ module.exports = function(environment) {
     'default-src': "*"
   };
 
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:oauth2-bearer'
+  }
+
+  ENV['simple-auth-oauth2'] = {
+    serverTokenEndpoint: 'oauth/token',
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -35,6 +43,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.API_HOST = 'http://localhost:3000'
+    ENV['simple-auth-oauth2'].serverTokenEndpoint = ENV.API_HOST + '/' + ENV['simple-auth-oauth2'].serverTokenEndpoint;
   }
 
   if (environment === 'test') {
