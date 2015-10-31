@@ -2,7 +2,7 @@
   <div class="text-center" id="landing-header">
     <img src="brandr.png" class="center-block col-xs-2">
     <p>Discover brands on your pictures</p>
-    <p>A community of hunters to help you figure out what are those !</p>
+    <p>A community of hunters to help you figure out what are thooose !</p>
   </div>
 
   <section class="center-block col-xs-4" id="register">
@@ -13,6 +13,16 @@
 
       <div class="form-group">
       {{input type="password" placeholder="Password Confirmation" class="form-control"}}
+      </div>
+
+      <div class="form-group" id="account-creation-disclaimer">
+        <span>
+          By creating an account, you aggree with Brandr's Terms of
+          Service, Privacy Policy and cookie use.<br />
+        </span>
+        <span>
+          Already have an account? {{#link-to 'login'}}Log in.{{/link-to}}
+        </span>
       </div>
 
       <div class="form-group">
