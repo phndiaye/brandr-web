@@ -1,5 +1,23 @@
-<form>
-  {{input type="email" placeholder="Enter an email address"}}
-  {{input type="password" placeholder="Create a password"}}
-  {{input type="password" placeholder="Confirm your password"}}
-</form>
+<div class="row" id="landing-container">
+  <div class="text-center" id="landing-header">
+    <img src="brandr.png" class="center-block col-xs-2">
+    <p>Discover brands on your pictures</p>
+    <p>A community of hunters to help you figure out what are those !</p>
+  </div>
+
+  <section class="center-block col-xs-4" id="register">
+    <form>
+      {{input type="email" placeholder="Email" class="form-control"}}
+
+      {{input type="password" placeholder="Password" class="form-control"}}
+
+      <div class="form-group">
+      {{input type="password" placeholder="Password Confirmation" class="form-control"}}
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-default col-xs-12">Create your account</button>
+      </div>
+    </form>
+  </section>
+</div>

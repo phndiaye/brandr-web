@@ -1,0 +1,36 @@
+section#register {
+  margin-top: 3%;
+  padding: 2%;
+
+  form {
+    border: none;
+  }
+
+  form input {
+    padding: 6% 3%;
+    border: none;
+
+    border-top: none;
+    border-bottom: 1px solid @brandr-grey;
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: @border-radius-small;
+      border-top-right-radius: @border-radius-small;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: @border-radius-small;
+      border-bottom-right-radius: @border-radius-small;
+    }
+  }
+
+  form button {
+    background-color: #34495e;
+    color: @brandr-grey;
+    text-transform: uppercase;
+  }
+
+}

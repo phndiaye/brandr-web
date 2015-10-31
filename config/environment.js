@@ -24,7 +24,7 @@ module.exports = function(environment) {
     'media-src': "*",
     'connect-src': "*",
     'img-src': "*",
-    'style-src': "'self' 'unsafe-inline'",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
     'default-src': "*"
   };
 
