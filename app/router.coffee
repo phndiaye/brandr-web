@@ -7,6 +7,7 @@ Router = Ember.Router.extend({
 
 Router.map () ->
   @route 'login'
-  # routes
+  @route 'dashboard', path: '/dashboard', ->
+    @route 'index', path: '/'
 
 `export default Router`
