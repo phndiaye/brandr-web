@@ -1,0 +1,29 @@
+<div class="brndr-hunt col-xs-12 col-md-4">
+  <div class="brndr-hunt-content col-xs-12">
+    <img {{bind-attr src=hunt.imageUrl}} />
+    <p class="brndr-hunts-count pull-right">
+      {{hunt.huntsCount}} Hunts / {{hunt.commentsCount}}
+    </p>
+    {{#if hunt.comments}}
+      <ul class="brndr-hunts-ltst-cmnts col-xs-12">
+        {{#each hunt.comments as |comment|}}
+          <li>
+            <div class="row">
+              <figure class="brndr-hunt-cmnt-poster-pict col-xs-2 pull-left">
+                <img {{bind-attr src=comment.posterPict}} />
+              </figure>
+              <p class="brndr-hunt-cmnt-txt no-gutter-left col-xs-10 pull-right">
+                {{comment.text}}
+              </p>
+            </div>
+            <div class="brndr-hunt-cmnt-stats col-xs-12">
+              <p class="pull-right">
+                {{comment.upvotes}} upvotes / {{comment.downvotes}} downvote
+              </p>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  </div>
+</div>

@@ -1,33 +1,5 @@
 {{#masonry-grid itemSelector=".brndr-hunt"}}
-  {{#each model as |huntImage|}}
-    <div class="brndr-hunt col-xs-12 col-md-4">
-      <div class="brndr-hunt-content col-xs-12">
-        <img {{bind-attr src=huntImage.imageUrl}} />
-        <p class="brndr-hunts-count pull-right">
-          {{huntImage.huntsCount}} Hunts / {{huntImage.commentsCount}}
-        </p>
-        {{#if huntImage.comments}}
-          <ul class="brndr-hunts-ltst-cmnts col-xs-12">
-            {{#each huntImage.comments as |comment|}}
-              <li>
-                <div class="row">
-                  <figure class="brndr-hunt-cmnt-poster-pict col-xs-2 pull-left">
-                    <img {{bind-attr src=comment.posterPict}} />
-                  </figure>
-                  <p class="brndr-hunt-cmnt-txt no-gutter-left col-xs-10 pull-right">
-                    {{comment.text}}
-                  </p>
-                </div>
-                <div class="brndr-hunt-cmnt-stats col-xs-12">
-                  <p class="pull-right">
-                    {{comment.upvotes}} upvotes / {{comment.downvotes}} downvote
-                  </p>
-                </div>
-              </li>
-            {{/each}}
-          </ul>
-        {{/if}}
-      </div>
-    </div>
+  {{#each model as |hunt|}}
+    {{one-hunt hunt=hunt}}
   {{/each}}
 {{/masonry-grid}}
