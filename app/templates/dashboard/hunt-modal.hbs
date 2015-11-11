@@ -1,0 +1,34 @@
+{{#modal-component size="modal-lg"}}
+  <div class="modal-brndr-hunt">
+    <div class="brndr-hunt-content row">
+      <div class="no-gutter-right col-xs-12 col-md-7">
+        <img {{bind-attr src=model.imageUrl}} />
+      </div>
+      <div class="no-gutter-left col-xs-12 col-md-5">
+        {{#if model.comments}}
+          <ul class="brndr-hunts-ltst-cmnts col-xs-12">
+            {{#each model.comments as |comment|}}
+              <li>
+                <div class="row">
+                  <figure class="brndr-hunt-cmnt-poster-pict col-xs-2 pull-left">
+                    <img {{bind-attr src=comment.posterPict}} />
+                  </figure>
+                  <p class="brndr-hunt-cmnt-txt no-gutter-left no-gutter-right col-xs-10 pull-right">
+                    {{comment.text}}
+                  </p>
+                </div>
+                <div class="brndr-hunt-cmnt-stats col-xs-12">
+                  <p class="pull-right">
+                    {{comment.upvotes}} upvotes / {{comment.downvotes}} downvote
+                  </p>
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+        {{else}}
+          ffffff
+        {{/if}}
+      </div>
+    </div>
+  </div>
+{{/modal-component}}

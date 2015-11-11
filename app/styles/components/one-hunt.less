@@ -18,11 +18,30 @@
 
       border-top-left-radius: @border-radius-small;
       border-top-right-radius: @border-radius-small;
+      cursor: zoom-in;
     }
 
     .brndr-hunts-count {
       padding: 2%;
     }
+
+    .brndr-hunts-ltst-cmnts {
+      list-style-type: none;
+
+      li {
+        .brndr-hunt-cmnt-poster-pict figure img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.modal-brndr-hunt {
+
+  div.brndr-hunt-content {
+    img { width: 100% }
+    color: @gray-light;
 
     .brndr-hunts-ltst-cmnts {
       list-style-type: none;
