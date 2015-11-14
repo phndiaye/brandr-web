@@ -4,6 +4,7 @@ DashboardIndexRoute = Ember.Route.extend
   model: ->
     [
       {
+        id: 1,
         imageUrl: 'http://photon.101medialablimit.netdna-cdn.com/hypebeast.com/image/2015/10/essentials-maxime-buchi-1.jpg',
         huntsCount: 3,
         commentsCount: 132,
@@ -23,26 +24,31 @@ DashboardIndexRoute = Ember.Route.extend
         }]
       },
       {
+        id: 2,
         imageUrl: 'http://photon.101medialablimit.netdna-cdn.com/hypebeast.com/image/2015/09/essentials-astrid-andersen-1.jpg?w=1382',
         huntsCount: 1,
         commentsCount: 0,
       },
       {
+        id: 3,
         imageUrl: 'http://photon.101medialablimit.netdna-cdn.com/hypebeast.com/image/2015/09/essentials-matt-fine-of-shiekh-shoes-001.jpg?w=1382',
         huntsCount: 1,
         commentsCount: 0,
       },
       {
+        id: 4,
         imageUrl: 'https://s-media-cache-ak0.pinimg.com/736x/e3/06/d1/e306d1537eb21119449172c2a08915d1.jpg',
         huntsCount: 1,
         commentsCount: 0,
       },
       {
+        id: 5,
         imageUrl: 'http://photon.101medialablimit.netdna-cdn.com/hypebeast.com/image/2015/08/essentials-jason-peterson-01.jpg?w=1499',
         huntsCount: 1,
         commentsCount: 0,
       },
       {
+        id: 6
         imageUrl: 'http://photon.101medialablimit.netdna-cdn.com/hypebeast.com/image/2015/10/essentials-maxime-buchi-1.jpg?w=1382',
         huntsCount: 1,
         commentsCount: 0,
