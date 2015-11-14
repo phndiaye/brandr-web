@@ -9,5 +9,6 @@ Router.map () ->
   @route 'login'
   @route 'dashboard', path: '/dashboard', ->
     @route 'index', path: '/'
+  @route 'hunt', path: '/hunt/:id'
 
 `export default Router`

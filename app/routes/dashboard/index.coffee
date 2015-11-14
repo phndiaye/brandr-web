@@ -55,4 +55,17 @@ DashboardIndexRoute = Ember.Route.extend
       },
     ]
 
+  actions:
+    openHuntModal: (modal, model) ->
+      router = @router
+
+      @controller.set '_previousUrl', router.router.generate(router.currentRouteName)
+      @send('openModal', modal, model)
+      router.router.updateURL(router.router.generate('hunt', model.id))
+
+    closeModalHunt: ->
+      router = @router
+      router.router.updateURL(@controller.get('_previousUrl'))
+      @send('closeModal')
+
 `export default DashboardIndexRoute`
