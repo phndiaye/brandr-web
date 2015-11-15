@@ -61,9 +61,9 @@ DashboardIndexRoute = Ember.Route.extend
 
       @controller.set '_previousUrl', router.router.generate(router.currentRouteName)
       @send('openModal', modal, model)
-      router.router.updateURL(router.router.generate('hunt', model.id))
+      router.router.updateURL(router.router.generate('dashboard.hunt', model.id))
 
-    closeModalHunt: ->
+    closeHuntModal: ->
       router = @router
       router.router.updateURL(@controller.get('_previousUrl'))
       @send('closeModal')
