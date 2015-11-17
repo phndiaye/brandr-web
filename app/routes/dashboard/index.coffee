@@ -8,19 +8,34 @@ DashboardIndexRoute = Ember.Route.extend
         imageUrl: 'http://photon.101medialablimit.netdna-cdn.com/hypebeast.com/image/2015/10/essentials-maxime-buchi-1.jpg',
         huntsCount: 3,
         commentsCount: 132,
-        comments: [{
-          posterPict: 'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg',
-          text: 'Entitled "Juke Or Treat,\" the track was shared by The Social
-                 Experiment\'s Petter Cottontale on Halloween yesterday and features
-                 samples from X-Files, Ghostbusters and The Twilight Zone.'
-          upvotes: 3,
-          downvotes: 1
+        huntItems: [{
+          id: 1,
+          top: 50,
+          left: 38,
+          comments: [{
+            posterPict: 'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg',
+            text: 'Entitled "Juke Or Treat,\" the track was shared by The Social
+                   Experiment\'s Petter Cottontale on Halloween yesterday and features
+                   samples from X-Files, Ghostbusters and The Twilight Zone.'
+            upvotes: 3,
+            downvotes: 1
+          },
+          {
+            posterPict: 'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg',
+            text: 'Entitled "Juke Or Treat," the track was shared by The Social'
+            upvotes: 2,
+            downvotes: 4
+          }]
         },
         {
-          posterPict: 'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg',
-          text: 'Entitled "Juke Or Treat," the track was shared by The Social'
-          upvotes: 2,
-          downvotes: 4
+          id: 2,
+          top: 10,
+          left: 50,
+        },
+        {
+          id: 3,
+          top: 75,
+          left: 90,
         }]
       },
       {

@@ -3,6 +3,9 @@
     <div class="brndr-hunt-content row">
       <div class="brndr-hunt-img no-gutter-right col-xs-12 col-md-7">
         <img {{bind-attr src=model.imageUrl}} />
+        {{#each model.huntItems as |huntItem|}}
+          <a {{action 'toggleHuntItem' huntItem.id}} style='top: {{huntItem.top}}%; left: {{huntItem.left}}%' class='brndr-hunt-itm-tltip'>+</a>
+        {{/each}}
       </div>
       <div class="no-gutter-left col-xs-12 col-md-5">
         {{#if model.comments}}
