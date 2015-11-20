@@ -1,3 +1,43 @@
 {{#modal-component size="modal-lg" action=action}}
-  {{yield}}
+  <div class="modal-brndr-hunt">
+    <div class="brndr-hunt-content row">
+      <div class="brndr-hunt-img no-gutter-right col-xs-12 col-md-7">
+        <img {{bind-attr src=model.imageUrl}} />
+        {{#each model.huntItems as |huntItem|}}
+          <a {{action "toggleHuntItem" huntItem}}
+             class="brndr-hunt-itm-tltip"
+             style="top: {{huntItem.top}}%; left: {{huntItem.left}}%">
+            +
+          </a>
+        {{/each}}
+      </div>
+      <div class="no-gutter-left col-xs-12 col-md-5">
+        {{#if currentHuntItem.comments}}
+          <ul class="brndr-hunts-ltst-cmnts col-xs-12">
+            {{#each currentHuntItem.comments as |comment|}}
+              <li>
+                <div class="row">
+                  <figure class="brndr-hunt-cmnt-poster-pict col-xs-2 pull-left">
+                    <img {{bind-attr src=comment.posterPict}} />
+                  </figure>
+                  <p class="brndr-hunt-cmnt-txt no-gutter-left no-gutter-right col-xs-10 pull-right">
+                    {{comment.text}}
+                  </p>
+                </div>
+                <div class="brndr-hunt-cmnt-stats col-xs-12">
+                  <p class="pull-right">
+                    {{comment.upvotes}} upvotes / {{comment.downvotes}} downvote
+                  </p>
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+        {{else}}
+          <p>
+            There are no comments on this hunt... yet. Be the first one to comment !
+          </p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
 {{/modal-component}}
