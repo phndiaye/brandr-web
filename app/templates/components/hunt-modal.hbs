@@ -12,31 +12,21 @@
         {{/each}}
       </div>
       <div class="no-gutter-left col-xs-12 col-md-5">
-        {{#if currentHuntItem.comments}}
-          <ul class="brndr-hunts-ltst-cmnts col-xs-12">
-            {{#each currentHuntItem.comments as |comment|}}
-              <li>
-                <div class="row">
-                  <figure class="brndr-hunt-cmnt-poster-pict col-xs-2 pull-left">
-                    <img {{bind-attr src=comment.posterPict}} />
-                  </figure>
-                  <p class="brndr-hunt-cmnt-txt no-gutter-left no-gutter-right col-xs-10 pull-right">
-                    {{comment.text}}
-                  </p>
-                </div>
-                <div class="brndr-hunt-cmnt-stats col-xs-12">
-                  <p class="pull-right">
-                    {{comment.upvotes}} upvotes / {{comment.downvotes}} downvote
-                  </p>
-                </div>
-              </li>
-            {{/each}}
-          </ul>
-        {{else}}
-          <p>
-            There are no comments on this hunt... yet. Be the first one to comment !
-          </p>
-        {{/if}}
+        <ul class="brndr-hunts-ltst-cmnts col-xs-12">
+          <li class="text-center">
+            Comments (3)
+          </li>
+          {{#each currentHuntItem.comments as |comment|}}
+            {{#hunt-comment comment=comment}}{{/hunt-comment}}
+          {{else}}
+            <li>
+              <p class="text-center">
+                There are no comments on this hunt... yet.<br />
+                Know anything about it? Go ahead!
+              </p>
+            </li>
+          {{/each}}
+        </ul>
       </div>
     </div>
   </div>
