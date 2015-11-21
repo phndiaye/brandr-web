@@ -1,8 +1,11 @@
 `import Ember from 'ember'`
 
 HuntModalComponent = Ember.Component.extend
+  currentHuntItem: ( ->
+    @get('model.huntItems.firstObject')
+  ).property('model.huntItems')
+
   didInsertElement: ->
-    @set 'currentHuntItem', @get('model.huntItems.firstObject')
     $('.brndr-hunt-itm-tltip').tooltipster()
 
   actions:
