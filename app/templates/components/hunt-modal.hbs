@@ -14,7 +14,7 @@
       <div class="no-gutter-left col-xs-12 col-md-5">
         <ul class="brndr-hunts-ltst-cmnts col-xs-12">
           <li class="text-center">
-            Comments (3)
+            Comments ({{currentHuntItem.commentsCount}})
           </li>
           {{#each currentHuntItem.comments as |comment|}}
             {{#hunt-comment comment=comment}}{{/hunt-comment}}
