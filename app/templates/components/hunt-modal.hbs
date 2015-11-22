@@ -2,7 +2,7 @@
   <div class="modal-brndr-hunt">
     <div class="brndr-hunt-content row">
       <div class="brndr-hunt-img no-gutter-right col-xs-12 col-md-7">
-        <img {{bind-attr src=model.imageUrl}} />
+        <img src="{{model.imageUrl}}" />
         {{#each model.huntItems as |huntItem|}}
           <a {{action "toggleHuntItem" huntItem}}
              class="brndr-hunt-itm-tltip"
