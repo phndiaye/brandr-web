@@ -1,8 +1,8 @@
 `import Ember from 'ember'`
-`import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin'`
+`import InjectSessionMixin from 'brandr-web/mixins/inject-session'`
 
-LoginController = Ember.Controller.extend(LoginControllerMixin, {
-  authenticator: 'simple-auth-authenticator:oauth2-password-grant'
+LoginController = Ember.Controller.extend InjectSessionMixin,
+  authenticator: 'authenticator:oauth2'
 
   actions:
     authenticate: ->
@@ -11,6 +11,5 @@ LoginController = Ember.Controller.extend(LoginControllerMixin, {
         password: @get('password')
       }
       @get('session').authenticate(@get('authenticator'), credentials)
-})
 
 `export default LoginController`
