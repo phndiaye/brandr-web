@@ -6,10 +6,10 @@ LoginController = Ember.Controller.extend InjectSessionMixin,
 
   actions:
     authenticate: ->
-      credentials = {
-        identification: @get('identification')
-        password: @get('password')
-      }
-      @get('session').authenticate(@get('authenticator'), credentials)
+      @get('session').authenticate(
+        @get('authenticator'),
+        @get('identification'),
+        @get('password')
+      )
 
 `export default LoginController`
