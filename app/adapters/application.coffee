@@ -2,7 +2,7 @@
 `import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin'`
 `import ENV from 'brandr-web/config/environment'`
 
-ApplicationAdapter = DS.RESTAdapter.extend DataAdapterMixin,
+ApplicationAdapter = DS.ActiveModelAdapter.extend DataAdapterMixin,
   namespace: 'api/v1'
   authorizer: 'authorizer:oauth2'
 
