@@ -28,6 +28,7 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap/js/modal.js');
   app.import('bower_components/tooltipster/css/tooltipster.css');
   app.import('bower_components/tooltipster/js/jquery.tooltipster.min.js');
+  app.import('bower_components/moment/min/moment-with-locales.min.js');
 
   return app.toTree();
 };
