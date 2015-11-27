@@ -2,6 +2,9 @@
   <nav id="dashboard-header" class="navbar navbar-default">
     <div class='container'>
       {{outlet 'navbar'}}
+      {{#if session.isAuthenticated}}
+        <a {{action "invalidateSession"}}>Logout</a>
+      {{/if}}
     </div>
   </nav>
   <div class="container">
