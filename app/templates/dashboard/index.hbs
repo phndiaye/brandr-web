@@ -1,5 +1,5 @@
 {{#masonry-grid itemSelector=".brndr-hunt"}}
-  {{#each model as |hunt|}}
+  {{#each hunts as |hunt|}}
     {{one-hunt hunt=hunt action="openHuntModal" modal="dashboard/hunt-modal"}}
   {{/each}}
 {{/masonry-grid}}
