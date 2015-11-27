@@ -28,10 +28,6 @@ module.exports = function(environment) {
     'default-src': "*"
   };
 
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:oauth2-bearer'
-  }
-
   ENV['simple-auth-oauth2'] = {
     serverTokenEndpoint: 'oauth/token',
   }

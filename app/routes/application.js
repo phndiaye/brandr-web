@@ -1,9 +1,10 @@
 import Ember from 'ember';
 import InjectSessionMixin from 'brandr-web/mixins/inject-session';
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
-var ApplicationRoute = Ember.Route.extend(InjectSessionMixin, {
+var ApplicationRoute = Ember.Route.extend(InjectSessionMixin, ApplicationRouteMixin, {
   beforeModel: function() {
-    if (this.get('session').isAuthenticated) {
+    if (this.session.isAuthenticated) {
       return this._populateCurrentUser()
     }
   },
@@ -12,6 +13,14 @@ var ApplicationRoute = Ember.Route.extend(InjectSessionMixin, {
     var _this = this
     return this.store.find('user', 'me').then(function(user) {
       _this.set('currentUser.content', user)
+    });
+  },
+
+
+  sessionAuthenticated: function() {
+    _this = this
+    this._populateCurrentUser().then(function (user) {
+      _this.transitionTo('dashboard.index');
     });
   },
 

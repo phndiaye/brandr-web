@@ -11,10 +11,6 @@ LoginController = Ember.Controller.extend InjectSessionMixin,
         @get('authenticator'),
         @get('identification'),
         @get('password')
-      ).then( ->
-        self.transitionToRoute('dashboard.index')
-      ).catch( (error) ->
-        console.log error
       )
 
 `export default LoginController`
