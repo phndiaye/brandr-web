@@ -1,10 +1,9 @@
 `import DS from 'ember-data'`
 
 HuntComment = DS.Model.extend {
-  posterPict: DS.attr('string')
+  user: DS.belongsTo('user')
+  huntItem: DS.belongsTo('hunt-item')
   text: DS.attr('string')
-  upvotes: DS.attr('number')
-  downvotes: DS.attr('number')
 }
 
 `export default HuntComment`

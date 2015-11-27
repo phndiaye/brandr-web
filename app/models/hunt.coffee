@@ -2,11 +2,11 @@
 
 Hunt = DS.Model.extend {
   imageUrl: DS.attr('string')
-  huntItems: DS.hasMany('hunt-item')
-
-  huntsCount: ( ->
-    @get('huntItems.length')
-  ).property('huntItems')
+  user: DS.belongsTo('user')
+  huntsCount: DS.attr('number')
+  huntItems: DS.hasMany('hunt-item', { async: false })
+  createdAt: DS.attr('date')
+  updatedAt: DS.attr('date')
 
   commentsCount: ( ->
     comments = 0
