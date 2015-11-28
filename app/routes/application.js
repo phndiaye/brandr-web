@@ -3,24 +3,22 @@ import InjectSessionMixin from 'brandr-web/mixins/inject-session';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
 var ApplicationRoute = Ember.Route.extend(InjectSessionMixin, ApplicationRouteMixin, {
-  beforeModel: function() {
-    if (this.session.isAuthenticated) {
-      return this._populateCurrentUser()
+  beforeModel() {
+    if (this.get('session').isAuthenticated) {
+      return this._populateCurrentUser();
     }
   },
 
-  _populateCurrentUser: function() {
-    var _this = this
-    return this.store.find('user', 'me').then(function(user) {
-      _this.set('currentUser.content', user)
-    });
+  _populateCurrentUser() {
+    return this.store.find('user', 'me').then(
+      user => this.get('currentUser').set('content', user) && user
+    );
   },
 
-  sessionAuthenticated: function() {
-    var _this = this
-    this._populateCurrentUser().then(function (user) {
-      _this.transitionTo('dashboard.index');
-    });
+  sessionAuthenticated() {
+    this._populateCurrentUser().then(
+      _ => this.transitionTo('dashboard.index')
+    );
   },
 
   actions: {
