@@ -1,11 +1,11 @@
 `import Ember from 'ember'`
 
-initialize = ({registry}) ->
+initialize = (application) ->
   service = Ember.ObjectProxy.create(isServiceFactory: true)
-  registry.register('service:current-user', service, { instantiate: false, singleton: true})
-  registry.injection('route', 'currentUser', 'service:current-user')
-  registry.injection('controller', 'currentUser', 'service:current-user')
-  registry.injection('component', 'currentUser', 'service:current-user')
+  application.register('service:current-user', service, { instantiate: false, singleton: true})
+  application.inject('route', 'currentUser', 'service:current-user')
+  application.inject('controller', 'currentUser', 'service:current-user')
+  application.inject('component', 'currentUser', 'service:current-user')
 
 CurrentUserInitializer =
   name: 'current-user'
