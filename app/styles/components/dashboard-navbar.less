@@ -1,0 +1,37 @@
+nav#dashboard-header {
+  img.brndr-logo {
+    width: 7%;
+  }
+
+  div.navbar-left-side {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: @brandr-grey;
+
+    button#brndr-hnt-add {
+      background-color: @brandr-blue;
+      border: 1px solid @brandr-blue;
+      border-radius: 3px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border-right: 0;
+      color: @brandr-grey;
+    }
+
+    div#brndr-profile-enter {
+      button {
+        border: 1px solid @brandr-grey;
+        border-radius: 0;
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+
+        &:hover {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -7,6 +7,10 @@ User = DS.Model.extend {
   email: DS.attr('string')
   gender: DS.attr('string')
   createdAt: DS.attr('date')
+
+  fullname: ( ->
+    "#{@get('firstname')} #{@get('lastname')}"
+  ).property()
 }
 
 `export default User`
