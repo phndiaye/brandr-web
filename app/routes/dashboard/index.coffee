@@ -1,5 +1,6 @@
 `import Ember from 'ember'`
 `import Hunt from 'brandr-web/models/hunt'`
+`import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin'`
 
 DashboardIndexRoute = Ember.Route.extend
   model: ->

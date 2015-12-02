@@ -1,7 +1,9 @@
 <div class="row">
   <nav id="dashboard-header" class="navbar navbar-default">
     <div class="col-xs-10 col-xs-offset-1">
-      <img src="brandr.png" class="brndr-logo col-xs-3 pull-left">
+      {{#link-to 'dashboard.index'}}
+        <img src="brandr.png" class="brndr-logo col-xs-3 pull-left">
+      {{/link-to}}
       <div class="navbar-left-side pull-right">
         {{#if session.isAuthenticated}}
           <button id="brndr-hnt-add" class="btn btn-default pull-left">+</button>
@@ -13,6 +15,20 @@
               <li><a {{action "invalidateSession"}}>Logout</a></li>
             </ul>
           </div>
+        {{else}}
+          <section id="login">
+            <form {{action "authenticate" on="submit"}} class="form-inline">
+              <div class="form-group">
+                {{input type="email" class="form-control"
+                  value=identification placeholder="Your email address"}}
+              </div>
+              <div class="form-group">
+                {{input type="password" class="form-control"
+                  value=password placeholder="Password"}}
+              </div>
+              <button type="submit" class="btn btn-default">Log In</button>
+            </form>
+          </section>
         {{/if}}
       </div>
     </div>

@@ -1,0 +1,29 @@
+section#login {
+  .form-inline .form-group {
+    margin: 0px -2px
+  }
+
+  form input {
+    border-radius: 3px;
+    border: 1px solid @brandr-grey;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &[type="password"] {
+      margin-left: 0;
+      border-radius: 3px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+    }
+
+  }
+  button {
+    border: 1px solid @brandr-grey;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 var ApplicationRoute = Ember.Route.extend(InjectSessionMixin, ApplicationRouteMixin, {
   beforeModel() {
-    if (this.get('session').isAuthenticated) {
+    if (this.get('session.isAuthenticated')) {
       return this._populateCurrentUser();
     }
   },
