@@ -6,12 +6,17 @@
       {{/link-to}}
       <div class="navbar-left-side pull-right">
         {{#if session.isAuthenticated}}
-          <button id="brndr-hnt-add" class="btn btn-default pull-left">+</button>
+          {{#link-to "dashboard.hunt.new" id="brndr-hnt-add"
+                     class="btn btn-default pull-left"}}
+            +
+          {{/link-to}}
           <div id="brndr-profile-enter" class="dropdown pull-left">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button"
+                    id="profile-entry-menu" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
               {{currentUser.fullname}}
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu" aria-labelledby="profile-entry-menu">
               <li><a {{action "invalidateSession"}}>Logout</a></li>
             </ul>
           </div>

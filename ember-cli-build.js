@@ -1,5 +1,6 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -9,6 +10,15 @@ module.exports = function(defaults) {
       ]
     }
   });
+
+  var additonalTrees = [];
+  additonalTrees.push(
+    new Funnel('bower_components/bootstrap/fonts', {
+      srcDir: '/',
+      include: ['**/*.woff', '**/*.eot', '**/*.ttf'],
+      destDir: '/fonts'
+    })
+  );
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -31,5 +41,5 @@ module.exports = function(defaults) {
   app.import('bower_components/tooltipster/js/jquery.tooltipster.min.js');
   app.import('bower_components/moment/min/moment-with-locales.min.js');
 
-  return app.toTree();
+  return app.toTree(additonalTrees);
 };
