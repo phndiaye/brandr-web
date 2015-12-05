@@ -6,9 +6,6 @@ DashboardIndexRoute = Ember.Route.extend
   model: ->
     @store.findAll('hunt')
 
-  setupController: (controller, model) ->
-    controller.set 'hunts', model
-
   actions:
     openHuntModal: (modal, model) ->
       router = @router
