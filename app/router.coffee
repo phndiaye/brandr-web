@@ -10,5 +10,6 @@ Router.map () ->
   @route 'dashboard', path: '/dashboard', ->
     @route 'hunt', path: '/hunt', ->
       @route 'show', path: '/:id'
+      @route 'new', path: '/new'
 
 `export default Router`

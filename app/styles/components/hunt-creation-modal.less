@@ -1,3 +1,7 @@
+div.file-picker img {
+  width: 100%;
+}
+
 div.hnt-placeholder {
   display: block;
   background: @brandr-grey;
@@ -20,5 +24,32 @@ div.hnt-placeholder {
 
       span { font-size: 2em; }
     }
+  }
+}
+
+div.hunt-creation-actions {
+  margin: 2%;
+
+  button {
+    color: #fff;
+  }
+
+  button:first-child {
+    background-color: @brandr-grey;
+    border: 1px solid @brandr-grey;
+    border-radius: 3px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 0;
+  }
+
+  button:last-child {
+    margin-left: -3px;
+
+    background-color: @brandr-blue;
+    border: 1px solid @brandr-blue;
+    border-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
   }
 }

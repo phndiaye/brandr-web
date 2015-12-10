@@ -6,10 +6,10 @@
       {{/link-to}}
       <div class="navbar-right-side pull-right">
         {{#if session.isAuthenticated}}
-          <button {{action "openHuntNewModal" on="click"}} id="brndr-hnt-add"
-                                                class="btn btn-default pull-left">
+          {{#link-to "dashboard.hunt.new" id="brndr-hnt-add"
+                                          class="btn btn-default pull-left"}}
             +
-          </button>
+          {{/link-to}}
           <div id="brndr-profile-enter" class="dropdown pull-left">
             <button class="btn btn-default dropdown-toggle" type="button"
                     id="profile-entry-menu" data-toggle="dropdown"

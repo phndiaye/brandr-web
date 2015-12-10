@@ -1,0 +1,19 @@
+{{#modal-component size="modal-md"}}
+  <div class="row">
+    <div class="col-xs-12">
+      {{#file-picker fileLoaded="huntImageLoaded"
+                     selectOnClick=selectOnClick}}
+        <div class="hnt-placeholder text-center">
+          <div class="placeholder">
+            <span class="glyphicon glyphicon-picture"></span>
+            <p>Click or drag to upload a picture</p>
+          </div>
+        </div>
+      {{/file-picker}}
+      <div class="hunt-creation-actions pull-right">
+        <button {{action "cancel"}} class="btn btn-default">Cancel</button>
+        <button {{action "createHunt"}} class="btn btn-default">Hunt!</button>
+      </div>
+    </div>
+  </div>
+{{/modal-component}}
