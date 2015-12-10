@@ -6,10 +6,10 @@
       {{/link-to}}
       <div class="navbar-right-side pull-right">
         {{#if session.isAuthenticated}}
-          {{#link-to "dashboard.hunt.new" id="brndr-hnt-add"
-                     class="btn btn-default pull-left"}}
+          <button {{action "openHuntNewModal" on="click"}} id="brndr-hnt-add"
+                                                class="btn btn-default pull-left">
             +
-          {{/link-to}}
+          </button>
           <div id="brndr-profile-enter" class="dropdown pull-left">
             <button class="btn btn-default dropdown-toggle" type="button"
                     id="profile-entry-menu" data-toggle="dropdown"
@@ -40,7 +40,12 @@
   </nav>
   <div class="container">
     <div class="row">
-      {{outlet}}
+      {{#masonry-grid itemSelector=".brndr-hunt"}}
+        {{#each model as |hunt|}}
+          {{one-hunt hunt=hunt action="openHuntModal" modal="dashboard/hunt-modal"}}
+        {{/each}}
+      {{/masonry-grid}}
+      {{outlet "modal"}}
     </div>
   </div>
 </div>

@@ -17,7 +17,7 @@ var ApplicationRoute = Ember.Route.extend(InjectSessionMixin, ApplicationRouteMi
 
   sessionAuthenticated() {
     this._populateCurrentUser().then(
-      _ => this.transitionTo('dashboard.index')
+      _ => this.transitionTo('dashboard')
     );
   },
 
