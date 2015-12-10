@@ -2,7 +2,8 @@
 
 OneHuntComponent = Ember.Component.extend
   actions:
-    openHuntModal: ->
-      @sendAction('action', @get('modal'), @get('hunt'), @get('controller'))
+    goToHunt: ->
+      hunt = @get('hunt')
+      @sendAction('action', hunt)
 
 `export default OneHuntComponent`

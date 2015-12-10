@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
 
-HuntModalComponent = Ember.Component.extend
+DashboardHuntShowController = Ember.Controller.extend
   currentHuntItem: ( ->
     @get('model.huntItems.firstObject')
   ).property('model.huntItems')
@@ -12,7 +12,4 @@ HuntModalComponent = Ember.Component.extend
     toggleHuntItem: (hunt) ->
       @set 'currentHuntItem', hunt
 
-    closeHuntModal: ->
-      @sendAction('action')
-
-`export default HuntModalComponent`
+`export default DashboardHuntShowController`

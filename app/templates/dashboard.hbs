@@ -42,7 +42,7 @@
     <div class="row">
       {{#masonry-grid itemSelector=".brndr-hunt"}}
         {{#each model as |hunt|}}
-          {{one-hunt hunt=hunt action="openHuntModal" modal="dashboard/hunt-modal"}}
+          {{one-hunt hunt=hunt action="goToHunt"}}
         {{/each}}
       {{/masonry-grid}}
       {{outlet "modal"}}
