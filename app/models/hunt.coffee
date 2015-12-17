@@ -1,6 +1,7 @@
 `import DS from 'ember-data'`
 
 Hunt = DS.Model.extend {
+  image: DS.attr('raw')
   imageUrl: DS.attr('string')
   user: DS.belongsTo('user')
   huntsCount: DS.attr('number')
