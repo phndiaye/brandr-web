@@ -4,8 +4,13 @@ DashboardHuntNewController = Ember.Controller.extend
   selectOnClick: true
 
   actions:
-    huntImageLoaded: ->
-      @set 'selectOnClick', false
+    addHuntItem: (huntItem) ->
+      @get('model.huntItems').pushObject(
+        @store.createRecord('hunt-item', {
+          top: huntItem.top,
+          left: huntItem.left
+        })
+      )
 
     cancel: ->
       console.log 'cancel'
