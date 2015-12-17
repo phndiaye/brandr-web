@@ -16,6 +16,8 @@ DashboardHuntNewController = Ember.Controller.extend
       console.log 'cancel'
 
     createHunt: ->
-      console.log 'createHunt'
+      @get('model').save().then( ->
+        console.log 'hunt created'
+      )
 
 `export default DashboardHuntNewController`
