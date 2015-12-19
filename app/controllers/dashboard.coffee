@@ -3,6 +3,14 @@
 `import LoginMixin from 'brandr-web/mixins/login'`
 
 DashboardController = Ember.Controller.extend InjectSessionMixin, LoginMixin,
+  sortBy: ['createdAt:desc']
+  sortedHunts: Ember.computed.sort('model', 'sortBy')
+
+  hunts: ( ->
+    this.get('sortedHunts').filter (record) ->
+      !record.get('isNew')
+  ).property('sortedHunts')
+
   actions:
     invalidateSession: ->
       @get('session').invalidate()
