@@ -17,8 +17,11 @@ DashboardHuntNewController = Ember.Controller.extend
       @send('closeModal', @get('back'))
 
     createHunt: ->
-      @get('model').save().then( ->
-        console.log 'hunt created'
+      _this = @
+      @get('model').save().then( (cooc) ->
+        _this.transitionToRoute('dashboard').then ( ->
+          location.reload()
+        )
       )
 
 `export default DashboardHuntNewController`
