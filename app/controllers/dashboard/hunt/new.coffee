@@ -2,6 +2,7 @@
 
 DashboardHuntNewController = Ember.Controller.extend
   selectOnClick: true
+  back: 'dashboard'
 
   actions:
     addHuntItem: (huntItem) ->
@@ -13,7 +14,7 @@ DashboardHuntNewController = Ember.Controller.extend
       )
 
     cancel: ->
-      console.log 'cancel'
+      @send('closeModal', @get('back'))
 
     createHunt: ->
       @get('model').save().then( ->
