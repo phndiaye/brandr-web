@@ -7,16 +7,12 @@ ModalComponentComponent = Ember.Component.extend
   click: (e) ->
     ember_id = @get('elementId')
     if !$(@).is(e.target) && $(@).has(e.target).length == 0 && $("##{ember_id}").has(e.target).length == 0
-      @send('closeModal')
+      @sendAction('action', @get('back'))
 
   didInsertElement: ->
     $("##{@get('elementId')}").modal()
 
   willDestroyElement: ->
     $("##{@get('elementId')}").modal('hide')
-
-  actions:
-    closeModal: ->
-      @sendAction('action')
 
 `export default ModalComponentComponent`

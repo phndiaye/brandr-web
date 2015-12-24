@@ -30,8 +30,9 @@ var ApplicationRoute = Ember.Route.extend(InjectSessionMixin, ApplicationRouteMi
       });
     },
 
-    closeModal: function() {
+    closeModal: function(back) {
       this.disconnectOutlet({ 'outlet': 'modal', 'parentView': 'application' });
+      this.transitionTo(back)
     }
   }
 });
