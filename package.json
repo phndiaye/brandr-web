@@ -43,6 +43,7 @@
     "moment": "2.10.6"
   },
   "dependencies": {
-    "broccoli-funnel": "^1.0.1"
+    "broccoli-funnel": "^1.0.1",
+    "masonry-layout": "^3.3.2"
   }
 }

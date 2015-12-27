@@ -1,0 +1,5 @@
+{{#each hunts as |hunt|}}
+  {{one-hunt hunt=hunt action="goToHunt"}}
+{{else}}
+  {{yield}}
+{{/each}}

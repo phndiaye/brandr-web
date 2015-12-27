@@ -39,13 +39,10 @@
     </div>
   </nav>
   <div class="container">
-    <div class="row">
-      {{#masonry-grid itemSelector=".brndr-hunt"}}
-        {{#each hunts as |hunt|}}
-          {{one-hunt hunt=hunt action="goToHunt"}}
-        {{/each}}
-      {{/masonry-grid}}
+      {{#hunts-display hunts=hunts}}
+        There are no hunts
+      {{/hunts-display}}
+
       {{outlet "modal"}}
-    </div>
   </div>
 </div>
