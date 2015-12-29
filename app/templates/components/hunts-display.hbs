@@ -3,3 +3,9 @@
 {{else}}
   {{yield}}
 {{/each}}
+
+<div class="col-xs-12" class="load-more-hunts text-center">
+  <a {{action "enableInfiniteScroll"}} class="btn btn-default">
+    Load More
+  </a>
+</div>

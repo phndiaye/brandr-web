@@ -10,8 +10,11 @@ DashboardRoute = Ember.Route.extend
   fetchNextPage: ->
     @store.query('hunt', { per_page: @get('per_page'), page: @get('page')})
 
-  canLoadMore: ->
-    true
+  canLoadMore: ( ->
+    if @get('page') < @modelFor('dashboard').get('meta.pages')
+      return true
+    false
+  ).property()
 
   actions:
     goToHunt: (hunt) ->
@@ -28,7 +31,7 @@ DashboardRoute = Ember.Route.extend
     loadMoreHunts: ->
       @set('page', @get('page') + 1)
       _this = @
-      if @canLoadMore
+      if @get('canLoadMore')
         @store.query('hunt', { per_page: @get('per_page'), page: @get('page')}).then (results) ->
           _this.modelFor('dashboard').pushObjects(results.get('content'))
 

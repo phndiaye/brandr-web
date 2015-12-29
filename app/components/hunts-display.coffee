@@ -3,6 +3,7 @@
 HuntsDisplayComponent = Ember.Component.extend
   tagName: 'div'
   classNames: ['row', 'brndr-hunts-wrapper']
+  enabledInfiniteScroll: false
 
   didInsertElement: ->
     _this = @
@@ -35,7 +36,14 @@ HuntsDisplayComponent = Ember.Component.extend
 
   didScroll: ->
     _this = @
-    if($(window).scrollTop() + $(window).height() == $(document).height())
+    if @get('enabledInfiniteScroll') && \
+        ($(window).scrollTop() + $(window).height() == $(document).height())
       @sendAction('action')
+
+  actions:
+    enableInfiniteScroll: ->
+      @toggleProperty('enabledInfiniteScroll')
+      @$('.load-more-hunts').hide()
+      @didScroll()
 
 `export default HuntsDisplayComponent`
