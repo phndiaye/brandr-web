@@ -38,9 +38,12 @@ HuntsDisplayComponent = Ember.Component.extend
     _this = @
     if @get('enabledInfiniteScroll') && \
         ($(window).scrollTop() + $(window).height() == $(document).height())
-      @sendAction('action')
+      @sendAction('loadMoreHunts')
 
   actions:
+    goToHunt: (hunt) ->
+      @sendAction('goToHunt', hunt)
+
     enableInfiniteScroll: ->
       @toggleProperty('enabledInfiniteScroll')
       @$('.load-more-hunts').hide()

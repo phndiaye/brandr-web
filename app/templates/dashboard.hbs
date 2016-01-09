@@ -39,7 +39,7 @@
     </div>
   </nav>
   <div class="container">
-    {{#hunts-display hunts=hunts action="loadMoreHunts"}}
+    {{#hunts-display hunts=hunts loadMoreHunts="loadMoreHunts" goToHunt="goToHunt"}}
       There are no hunts
     {{/hunts-display}}
 
