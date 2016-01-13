@@ -17,9 +17,6 @@ DashboardRoute = Ember.Route.extend
   ).property()
 
   actions:
-    goToHunt: (hunt) ->
-      @transitionTo('dashboard.hunt.show', hunt)
-
     openHuntNewModal: ->
       @render('dashboard/hunt/new', {
         into: 'dashboard',

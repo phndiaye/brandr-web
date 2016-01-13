@@ -1,5 +1,7 @@
 <div class="brndr-hunt-content col-xs-12">
-  <img src="{{hunt.imageUrl}}" {{action "goToHunt" on="click"}} />
+  {{#link-to "dashboard.hunt.show" hunt}}
+    <img src="{{hunt.imageUrl}}" />
+  {{/link-to}}
   <p class="brndr-hunts-count pull-right">
     {{hunt.commentsCount}} Comments about {{hunt.huntsCount}} Hunts
   </p>
