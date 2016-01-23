@@ -1,6 +1,6 @@
 `import { moduleFor, test } from 'ember-qunit'`
 
-moduleFor 'controller:dashboard/hunt/show', {
+moduleFor 'controller:dashboard/hunts', {
   # Specify the other units that are required for this test.
   # needs: ['controller:foo']
 }

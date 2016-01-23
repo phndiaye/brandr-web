@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
 
-DashboardHuntNewController = Ember.Controller.extend
+DashboardHuntsNewController = Ember.Controller.extend
   selectOnClick: true
   back: 'dashboard'
 
@@ -19,9 +19,9 @@ DashboardHuntNewController = Ember.Controller.extend
     createHunt: ->
       _this = @
       @get('model').save().then( (cooc) ->
-        _this.transitionToRoute('dashboard').then ( ->
+        _this.transitionToRoute('dashboard.hunts').then ( ->
           location.reload()
         )
       )
 
-`export default DashboardHuntNewController`
+`export default DashboardHuntsNewController`

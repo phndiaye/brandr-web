@@ -2,11 +2,11 @@
 `import InjectSessionMixin from 'brandr-web/mixins/inject-session'`
 `import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin'`
 
-DashboardHuntNewRoute = Ember.Route.extend InjectSessionMixin, AuthenticatedRouteMixin,
+DashboardHuntsNewRoute = Ember.Route.extend InjectSessionMixin, AuthenticatedRouteMixin,
   model: ->
     @store.createRecord 'hunt', user: @get('currentUser')
 
   renderTemplate: ->
-    @render('dashboard.hunt.new', { into: 'application', outlet: 'modal' })
+    @render('dashboard.hunts.new', { into: 'application', outlet: 'modal' })
 
-`export default DashboardHuntNewRoute`
+`export default DashboardHuntsNewRoute`

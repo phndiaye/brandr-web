@@ -1,48 +1,64 @@
-<div class="row">
-  <nav id="dashboard-header" class="navbar navbar-default">
-    <div class="col-xs-10 col-xs-offset-1">
-      {{#link-to 'dashboard.index'}}
-        <img src="brandr.png" class="brndr-logo col-xs-3 pull-left">
-      {{/link-to}}
-      <div class="navbar-right-side pull-right">
-        {{#if session.isAuthenticated}}
-          {{#link-to "dashboard.hunt.new" id="brndr-hnt-add"
-                                          class="btn btn-default pull-left"}}
-            +
-          {{/link-to}}
-          <div id="brndr-profile-enter" class="dropdown pull-left">
-            <button class="btn btn-default dropdown-toggle" type="button"
-                    id="profile-entry-menu" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="true">
-              {{currentUser.fullname}}
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="profile-entry-menu">
-              <li><a {{action "invalidateSession"}}>Logout</a></li>
-            </ul>
-          </div>
-        {{else}}
-          <section id="login">
-            <form {{action "authenticate" on="submit"}} class="form-inline">
-              <div class="form-group">
-                {{input type="email" class="form-control"
-                  value=identification placeholder="Your email address"}}
-              </div>
-              <div class="form-group">
-                {{input type="password" class="form-control"
-                  value=password placeholder="Password"}}
-              </div>
-              <button type="submit" class="btn btn-default">Log In</button>
-            </form>
-          </section>
-        {{/if}}
+{{#if session.isAuthenticated}}
+  <div class="row">
+    <nav id="dashboard-header" class="navbar navbar-default">
+      <div class="col-xs-10 col-xs-offset-1">
+        {{#link-to 'dashboard.hunts'}}
+          <img src="brandr.png" class="brndr-logo col-xs-3 pull-left">
+        {{/link-to}}
+        <div class="navbar-right-side pull-right">
+            {{#link-to "dashboard.hunts.new" id="brndr-hnt-add"
+                                            class="btn btn-default pull-left"}}
+              +
+            {{/link-to}}
+            <div id="brndr-profile-enter" class="dropdown pull-left">
+              <button class="btn btn-default dropdown-toggle" type="button"
+                      id="profile-entry-menu" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="true">
+                {{currentUser.fullname}}
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="profile-entry-menu">
+                <li><a {{action "invalidateSession"}}>Logout</a></li>
+              </ul>
+            </div>
+        </div>
       </div>
+    </nav>
+    <div class="container">
+      {{outlet}}
     </div>
-  </nav>
-  <div class="container">
-    {{#hunts-display hunts=hunts loadMoreHunts="loadMoreHunts"}}
-      There are no hunts
-    {{/hunts-display}}
-
-    {{outlet "modal"}}
   </div>
-</div>
+{{else}}
+  <div class="row" id="landing-container">
+    <div class="text-center" id="landing-header">
+      <h1><img src="brandr.png" class="center-block col-xs-2"></h1>
+      <h2>Discover brands on your pictures.</h2>
+      <p>A community of hunters to help you figure out what are thooose !</p>
+    </div>
+
+    <section class="center-block col-xs-4" id="register">
+      <form>
+        {{input type="email" placeholder="Email" class="form-control"}}
+
+        {{input type="password" placeholder="Password" class="form-control"}}
+
+        <div class="form-group">
+        {{input type="password" placeholder="Password Confirmation" class="form-control"}}
+        </div>
+
+        <div class="form-group" id="account-creation-disclaimer">
+          <span>
+            By creating an account, you aggree with Brandr's Terms of
+            Service, Privacy Policy and cookie use.<br />
+          </span>
+          <span>
+            Already have an account? {{#link-to 'login'}}Log in.{{/link-to}}
+          </span>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-default col-xs-12">Create your account</button>
+        </div>
+      </form>
+    </section>
+  </div>
+{{/if}}
