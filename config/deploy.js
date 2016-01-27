@@ -24,6 +24,12 @@ module.exports = function(deployTarget) {
       host:           'ec2-52-91-155-86.compute-1.amazonaws.com',
       dstHost:        'brandr-production.vu76z5.0001.use1.cache.amazonaws.com'
     };
+    ENV.s3 = {
+      accessKeyId: 'AKIAITFWK3UK3C44TBBQ',
+      secretAccessKey: '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',
+      bucket: 'brandr-prd',
+      region: 'us-east-1'
+    };
   }
 
   // Note: if you need to build some configuration asynchronously, you can return

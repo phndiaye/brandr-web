@@ -20,6 +20,13 @@ module.exports = function(defaults) {
     })
   );
 
+  if (app.env === 'production') {
+    app.options.fingerprint = {
+      prepend: "https://d6r09lakq62p6.cloudfront.net/",
+      enabled: true
+    }
+  }
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

@@ -32,6 +32,7 @@
     "ember-cli-deploy-display-revisions": "0.1.0",
     "ember-cli-deploy-redis": "0.1.1",
     "ember-cli-deploy-revision-data": "0.1.0",
+    "ember-cli-deploy-s3": "0.2.0",
     "ember-cli-deploy-ssh-tunnel": "0.2.1",
     "ember-cli-file-picker": "0.0.8",
     "ember-cli-htmlbars": "0.7.9",
