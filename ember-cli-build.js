@@ -4,6 +4,10 @@ var Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    fingerprint: {
+      prepend: "https://d6r09lakq62p6.cloudfront.net/",
+      enabled: EmberApp.env() == "production"
+    },
     lessOptions: {
       paths: [
         'bower_components/bootstrap/less'
@@ -19,13 +23,6 @@ module.exports = function(defaults) {
       destDir: '/fonts'
     })
   );
-
-  if (app.env === 'production') {
-    app.options.fingerprint = {
-      prepend: "https://d6r09lakq62p6.cloudfront.net/",
-      enabled: true
-    }
-  }
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
