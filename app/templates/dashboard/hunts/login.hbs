@@ -1,0 +1,36 @@
+{{#modal-component size="modal-md" action="closeModal"
+                   back="dashboard.hunts.index"}}
+  <div class="brndr-access-form row">
+    <div id="go-to-create-account">
+      {{#link-to "dashboard.hunts.register" class="btn btn-default"}}
+        Sign up
+      {{/link-to}}
+    </div>
+    <form {{action "authenticate" on="submit"}}
+          class="center-block text-center col-xs-8">
+      <h1>
+        <img src="brandr.png" class="center-block col-xs-4">
+      </h1>
+
+      {{input type="email" class="form-control" placeholder="Email address"
+              value=identification}}
+
+      <div class="form-group">
+        {{input type="password" class="form-control" placeholder="Password"
+                value=password}}
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn col-xs-12">
+          Log In
+        </button>
+      </div>
+
+      <div class="form-group">
+        <p id="go-to-registration" class="col-xs-12">
+          Don't have an account? {{#link-to "dashboard.hunts.register"}}Sign Up Now{{/link-to}}
+        </p>
+      </div>
+    </form>
+  </div>
+{{/modal-component}}

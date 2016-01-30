@@ -1,11 +1,10 @@
 `import { moduleFor, test } from 'ember-qunit'`
 
-moduleFor 'controller:login', {
+moduleFor 'route:dashboard/hunts/register', 'Unit | Route | dashboard/hunts/register', {
   # Specify the other units that are required for this test.
   # needs: ['controller:foo']
 }
 
-# Replace this with your real tests.
 test 'it exists', (assert) ->
-  controller = @subject()
-  assert.ok controller
+  route = @subject()
+  assert.ok route

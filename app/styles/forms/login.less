@@ -1,48 +1,32 @@
-section#login {
-  .form-inline .form-group {
-    margin: 0px -2px
-  }
+div.brndr-access-form {
+  padding-top: 5%;
+  padding-bottom: 5%;
 
-  form input {
-    border-radius: 3px;
-    border: 1px solid @brandr-grey;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  div#go-to-create-account {
+    position: absolute;
+    right: 2%;
+    top: 2%;
 
-    &[type="password"] {
-      margin-left: 0;
+    a {
+      background-color: @brandr-blue;
+      border: 1px solid @brandr-blue;
       border-radius: 3px;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-left: 1px solid @brandr-grey;
-    }
-
-  }
-  button {
-    border: 1px solid @brandr-grey;
-    text-transform: uppercase;
-
-    &:hover {
-      background-color: #fff;
+      color: @brandr-grey;
+      text-transform: uppercase;
     }
   }
-}
-
-section#login-full {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%) !important;
-  -webkit-transform: translate(-50%, -50%) !important;
 
   form {
     input {
-      padding: 8% 3%;
+      padding: 5% 3%;
 
-      border: none;
+      border: 1px solid @brandr-grey;
       border-bottom: 1px solid @brandr-grey;
       border-radius: 0;
+
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+      }
 
       &[type="email"] {
         border-top-left-radius: @border-radius-small;
@@ -50,18 +34,23 @@ section#login-full {
       }
 
       &[type="password"] {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+        border-top: none;
         border-bottom-left-radius: @border-radius-small;
         border-bottom-right-radius: @border-radius-small;
       }
     }
 
     button {
-      background-color: #34495e;
+      padding: 3%;
+      background-color: @brandr-blue;
+      border: 1px solid @brandr-blue;
+      border-radius: 3px;
       color: @brandr-grey;
       text-transform: uppercase;
-      border: 1px solid @brandr-grey;
+
+      &:hover {
+        color: @brandr-grey;
+      }
     }
 
     p {
@@ -76,5 +65,22 @@ section#login-full {
         }
       }
     }
+
+    div.hr {
+      display: block;
+      width: 100%;
+
+      background: @brandr-grey;
+    }
+  }
+}
+
+div.brndr-access-form#register-form form {
+  input[name="password"] {
+    border-radius: 0;
+  }
+
+  input:last-child {
+  
   }
 }

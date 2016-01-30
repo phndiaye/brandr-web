@@ -1,11 +1,13 @@
 nav#dashboard-header {
+  border-radius: 0;
+
   img.brndr-logo {
-    width: 7%;
+    width: 100%;
   }
 
   div.navbar-right-side {
     position: absolute;
-    right: 0;
+    right: 2%;
     top: 50%;
     transform: translateY(-50%);
 
@@ -30,6 +32,18 @@ nav#dashboard-header {
 
         &:hover {
           background-color: #fff;
+        }
+      }
+    }
+
+    div#go-to-login {
+      a {
+        color: @brandr-blue;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: none;
         }
       }
     }

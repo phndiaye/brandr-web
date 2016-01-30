@@ -2,7 +2,6 @@
 `import InjectSessionMixin from 'brandr-web/mixins/inject-session'`
 `import LoginMixin from 'brandr-web/mixins/login'`
 
-LoginController = Ember.Controller.extend(InjectSessionMixin, LoginMixin)
+DashboardHuntsLoginController = Ember.Controller.extend(InjectSessionMixin, LoginMixin)
 
-
-`export default LoginController`
+`export default DashboardHuntsLoginController`

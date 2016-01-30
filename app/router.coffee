@@ -6,9 +6,10 @@ Router = Ember.Router.extend({
 })
 
 Router.map () ->
-  @route 'login'
   @route 'dashboard', path: '/', ->
     @route 'hunts', path: '/', ->
+      @route 'register', path: 'sign_up'
+      @route 'login', path: 'sign_in'
       @route 'show', path: '/h/:id'
       @route 'new', path: '/h/new'
 

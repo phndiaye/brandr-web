@@ -1,4 +1,5 @@
 `import Ember from 'ember'`
+`import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin'`
 
 DashboardHuntsRoute = Ember.Route.extend
   page: 1
