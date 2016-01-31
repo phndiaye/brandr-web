@@ -5,6 +5,8 @@ User = DS.Model.extend {
   lastname: DS.attr('string')
   username: DS.attr('string')
   email: DS.attr('string')
+  password: DS.attr('string')
+  passwordConfirmation: DS.attr('string')
   gender: DS.attr('string')
   createdAt: DS.attr('date')
 

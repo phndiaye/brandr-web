@@ -21,22 +21,30 @@ div.brndr-access-form {
       padding: 5% 3%;
 
       border: 1px solid @brandr-grey;
-      border-bottom: 1px solid @brandr-grey;
+      border-bottom: none;
       border-radius: 0;
 
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px white inset;
       }
 
-      &[type="email"] {
-        border-top-left-radius: @border-radius-small;
-        border-top-right-radius: @border-radius-small;
+      &:focus {
+        border-bottom: 1px solid @brandr-blue;
       }
+    }
 
-      &[type="password"] {
-        border-top: none;
-        border-bottom-left-radius: @border-radius-small;
-        border-bottom-right-radius: @border-radius-small;
+    div.form-group.first-child input {
+      border-top-left-radius: @border-radius-small;
+      border-top-right-radius: @border-radius-small;
+    }
+
+    div.form-group.last-child input {
+      border-bottom: 1px solid @brandr-grey;
+      border-bottom-left-radius: @border-radius-small;
+      border-bottom-right-radius: @border-radius-small;
+
+      &:focus {
+        border-bottom: 1px solid @brandr-blue;
       }
     }
 
@@ -72,15 +80,5 @@ div.brndr-access-form {
 
       background: @brandr-grey;
     }
-  }
-}
-
-div.brndr-access-form#register-form form {
-  input[name="password"] {
-    border-radius: 0;
-  }
-
-  input:last-child {
-  
   }
 }

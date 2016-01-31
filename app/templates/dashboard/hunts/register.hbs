@@ -6,19 +6,52 @@
         Sign in
       {{/link-to}}
     </div>
-    <form {{action "authenticate" on="submit"}}
+
+    <form {{action "registerUser" on="submit"}}
           class="center-block text-center col-xs-8">
       <h1>
         <img src="brandr.png" class="center-block col-xs-4">
       </h1>
 
-      {{input type="email" placeholder="Email" class="form-control"}}
+      <div class="form-group no-gutter first-child {{errorOnFirstname.class}}">
+        {{input type="text" placeholder="Your firstname" class="form-control"
+                value=model.firstname aria-describedby="inputError2Status"}}
+        {{#if errorOnFirstname}}
+          <p>{{errorOnFirstname.detail}}</p>
+        {{/if}}
+      </div>
 
-      {{input type="password" placeholder="Password" class="form-control"
-              name="password"}}
+      <div class="form-group no-gutter {{errorOnLastname.class}}">
+        {{input type="text" placeholder="Your lastname" class="form-control"
+                value=model.lastname}}
+        {{#if errorOnLastname}}
+          <p>{{errorOnLastname.detail}}</p>
+        {{/if}}
+      </div>
 
-      {{input type="password" placeholder="Password Confirmation"
-              class="form-control" name="password-confirmation"}}
+      <div class="form-group no-gutter {{errorOnEmail.class}}">
+        {{input type="email" placeholder="Email" class="form-control"
+                value=model.email}}
+        {{#if errorOnEmail}}
+          <p>{{errorOnEmail.detail}}</p>
+        {{/if}}
+      </div>
+
+      <div class="form-group no-gutter {{errorOnPassword.class}}">
+        {{input type="password" placeholder="Password" class="form-control"
+                name="password" value=model.password}}
+        {{#if errorOnPassword}}
+          <p>{{errorOnPassword.detail}}</p>
+        {{/if}}
+      </div>
+
+      <div class="form-group no-gutter last-child {{errorOnPassword_confirmation.class}}">
+        {{input type="password" placeholder="Password Confirmation"
+                class="form-control" value=model.passwordConfirmation}}
+        {{#if errorOnPassword_confirmation}}
+          <p>{{errorOnPassword_confirmation.detail}}</p>
+        {{/if}}
+      </div>
 
       <div class="form-group" id="account-creation-disclaimer">
         <p>

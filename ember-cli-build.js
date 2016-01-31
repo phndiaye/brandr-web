@@ -41,6 +41,7 @@ module.exports = function(defaults) {
   app.import('bower_components/masonry/dist/masonry.pkgd.min.js');
   app.import('bower_components/bootstrap/js/modal.js');
   app.import('bower_components/bootstrap/js/dropdown.js');
+  app.import('bower_components/bootstrap/js/carousel.js');
   app.import('bower_components/tooltipster/css/tooltipster.css');
   app.import('bower_components/tooltipster/js/jquery.tooltipster.min.js');
   app.import('bower_components/moment/min/moment-with-locales.min.js');
