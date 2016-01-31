@@ -17,7 +17,7 @@
         {{input type="text" placeholder="Your firstname" class="form-control"
                 value=model.firstname aria-describedby="inputError2Status"}}
         {{#if errorOnFirstname}}
-          <p>{{errorOnFirstname.detail}}</p>
+          <p class="error-text pull-left">{{t errorOnFirstname.detail}}</p>
         {{/if}}
       </div>
 
@@ -25,7 +25,7 @@
         {{input type="text" placeholder="Your lastname" class="form-control"
                 value=model.lastname}}
         {{#if errorOnLastname}}
-          <p>{{errorOnLastname.detail}}</p>
+          <p class="error-text pull-left">{{t errorOnLastname.detail}}</p>
         {{/if}}
       </div>
 
@@ -33,7 +33,7 @@
         {{input type="email" placeholder="Email" class="form-control"
                 value=model.email}}
         {{#if errorOnEmail}}
-          <p>{{errorOnEmail.detail}}</p>
+          <p class="error-text pull-left">{{t errorOnEmail.detail}}</p>
         {{/if}}
       </div>
 
@@ -41,7 +41,7 @@
         {{input type="password" placeholder="Password" class="form-control"
                 name="password" value=model.password}}
         {{#if errorOnPassword}}
-          <p>{{errorOnPassword.detail}}</p>
+          <p class="error-text pull-left">{{t errorOnPassword.detail}}</p>
         {{/if}}
       </div>
 
@@ -49,7 +49,7 @@
         {{input type="password" placeholder="Password Confirmation"
                 class="form-control" value=model.passwordConfirmation}}
         {{#if errorOnPassword_confirmation}}
-          <p>{{errorOnPassword_confirmation.detail}}</p>
+          <p class="error-text pull-left">{{errorOnPassword_confirmation.detail}}</p>
         {{/if}}
       </div>
 
