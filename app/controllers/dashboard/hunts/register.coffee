@@ -1,11 +1,16 @@
 `import Ember from 'ember'`
+`import LoginMixin from 'brandr-web/mixins/login'`
+`import InjectSessionMixin from 'brandr-web/mixins/inject-session'`
 
-DashboardHuntsRegisterController = Ember.Controller.extend
+DashboardHuntsRegisterController = Ember.Controller.extend InjectSessionMixin, LoginMixin,
   actions:
     registerUser: ->
       _this = @
-      @model.save().then( ->
-        console.log 'user created'
+
+      @model.save().then( (result) ->
+        _this.set 'identification', _this.model.get('email')
+        _this.set 'password', _this.model.get('password')
+        _this.authenticate()
       ).catch (e) ->
         e.errors.map (err) ->
           _this.set(

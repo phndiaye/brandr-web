@@ -6,7 +6,7 @@
         Sign up
       {{/link-to}}
     </div>
-    <form {{action "authenticate" on="submit"}}
+    <form {{action "authenticateUser" on="submit"}}
           class="center-block text-center col-xs-8">
       <h1>
         <img src="brandr.png" class="center-block col-xs-4">
@@ -21,6 +21,12 @@
         {{input type="password" class="form-control" placeholder="Password"
                 value=password}}
       </div>
+
+      {{#if errorOnLogin}}
+        <div class="form-group">
+          <p class="error-text pull-left">{{t errorOnLogin}}</p>
+        </div>
+      {{/if}}
 
       <div class="form-group">
         <button type="submit" class="btn col-xs-12">

@@ -1,4 +1,5 @@
 export default {
+  'invalid_grant': 'Wrong email address or password',
   'user': {
     'firstname': {
       'errors': {
@@ -17,7 +18,8 @@ export default {
     },
     'password': {
       'errors': {
-        'blank': "You must have a password. They're useful, you know?"
+        'blank': "You must have a password. They're useful, you know?",
+        'taken': "This email address is already taken"
       }
     },
     'password_confirmation': {
