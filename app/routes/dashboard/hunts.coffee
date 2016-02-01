@@ -9,13 +9,17 @@ DashboardHuntsRoute = Ember.Route.extend
     @store.query('hunt', { per_page: @get('per_page'), page: @get('page')})
 
   canLoadMore: ( ->
-    if @get('page') < @modelFor('dashboard.hunts').get('meta.pages')
+    if @modelFor('dashboard.hunts').get('meta.total') > @get('per_page')
       return true
     false
-  ).property()
+  ).property('model')
 
   model: ->
     @store.query('hunt', { per_page: @get('per_page'), page: @get('page')})
+
+  setupController: (controller, model) ->
+    controller.set 'canLoadMore', @get('canLoadMore')
+    @_super(controller, model)
 
   actions:
     loadMoreHunts: ->

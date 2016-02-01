@@ -1,4 +1,4 @@
-initialize = (container, application) ->
+initialize = (application) ->
   application.inject('helper', 'i18n', 'service:i18n')
 
 I18nInitializer =
