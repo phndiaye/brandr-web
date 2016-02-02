@@ -6,8 +6,9 @@
 
 {{#if canLoadMore}}
   <div class="col-xs-12" class="load-more-hunts text-center">
-    <a {{action "enableInfiniteScroll"}} class="btn btn-default">
+    <button {{action "enableInfiniteScroll"}}
+            class="btn btn-default col-xs-3 text-center center-block">
       Load More
-    </a>
+    </button>
   </div>
 {{/if}}
