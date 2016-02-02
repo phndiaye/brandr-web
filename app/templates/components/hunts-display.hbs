@@ -1,7 +1,9 @@
 {{#each hunts as |hunt|}}
   {{one-hunt hunt=hunt}}
 {{else}}
-  {{yield}}
+  <div class="no-hunts text-center">
+    {{yield}}
+  </div>
 {{/each}}
 
 {{#if canLoadMore}}
