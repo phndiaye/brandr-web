@@ -41,9 +41,15 @@ div.hunt-creation-actions {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     border-right: 0;
+
+    &:hover {
+      background-color: @brandr-grey;
+      border-color: @brandr-grey;
+      color: #fff;
+    }
   }
 
-  a {
+  button:last-child {
     margin-left: -3px;
 
     background-color: @brandr-blue;
@@ -54,6 +60,7 @@ div.hunt-creation-actions {
 
     &:hover {
       background-color: @brandr-blue;
+      border-color: @brandr-blue;
       color: #fff;
       cursor: pointer;
     }

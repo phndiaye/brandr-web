@@ -6,7 +6,10 @@
 
     <div class="hunt-creation-actions pull-right">
       <button {{action "cancel"}} class="btn btn-default">Cancel</button>
-      <button {{action "createHunt"}} class="btn btn-default">Hunt!</button>
+      <button {{action "createHunt"}} class="btn btn-default"
+              disabled={{noHuntItems}}>
+        Hunt!
+      </button>
     </div>
   </div>
 </div>

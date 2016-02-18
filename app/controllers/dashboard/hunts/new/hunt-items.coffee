@@ -1,6 +1,10 @@
 `import Ember from 'ember'`
 
 DashboardHuntsNewHuntItemsController = Ember.Controller.extend
+  noHuntItems: ( ->
+    @model.get('huntItems.length') == 0
+  ).property('model.huntItems.[]')
+
   actions:
     addHuntItem: (huntItem) ->
       @get('model.huntItems').pushObject(

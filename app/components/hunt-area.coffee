@@ -17,10 +17,7 @@ HuntAreaComponent = Ember.Component.extend
     return { x: xPosition, y: yPosition }
 
   click: (e) ->
-    console.log e.target.tagName.toLowerCase()
-    console.log @get('huntCreationStep').get('currentStep')
     if e.target.tagName.toLowerCase() == 'img' && @get('huntCreationStep').get('currentStep') == 'hunt-items'
-      console.log @get('selectOnClick')
       imagePosition = @findPosition(e.currentTarget)
       left = ((e.clientX - imagePosition.x) / e.target.width) * 100
       top = ((e.clientY - imagePosition.y) / e.target.height) * 100
