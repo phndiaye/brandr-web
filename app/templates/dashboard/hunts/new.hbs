@@ -1,18 +1,3 @@
-{{#modal-component size="modal-md" action="closeModal" back="dashboard.hunts"}}
-  <div class="row">
-    <div class="col-xs-12">
-      {{#hunt-area model=model action="addHuntItem"}}
-        <div class="hnt-placeholder text-center">
-          <div class="placeholder">
-            <span class="glyphicon glyphicon-picture"></span>
-            <p>Click or drag to upload a picture</p>
-          </div>
-        </div>
-      {{/hunt-area}}
-      <div class="hunt-creation-actions pull-right">
-        <button {{action "cancel"}} class="btn btn-default">Cancel</button>
-        <button {{action "createHunt"}} class="btn btn-default">Hunt!</button>
-      </div>
-    </div>
-  </div>
+{{#modal-component size="modal-md" back="dashboard.hunts"}}
+  {{outlet}}
 {{/modal-component}}

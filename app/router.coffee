@@ -11,6 +11,8 @@ Router.map () ->
       @route 'register', path: 'sign_up'
       @route 'login', path: 'sign_in'
       @route 'show', path: '/h/:id'
-      @route 'new', path: '/h/new'
+      @route 'new', path: '/h/new', ->
+        @route 'photo', path: '/picture'
+        @route 'hunt-items', path: '/items'
 
 `export default Router`

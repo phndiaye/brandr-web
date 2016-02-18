@@ -30,11 +30,11 @@ div.hnt-placeholder {
 div.hunt-creation-actions {
   margin: 2%;
 
-  button {
+  button, a {
     color: #fff;
   }
 
-  button:first-child {
+  button {
     background-color: @brandr-grey;
     border: 1px solid @brandr-grey;
     border-radius: 3px;
@@ -43,7 +43,7 @@ div.hunt-creation-actions {
     border-right: 0;
   }
 
-  button:last-child {
+  a {
     margin-left: -3px;
 
     background-color: @brandr-blue;
@@ -51,5 +51,11 @@ div.hunt-creation-actions {
     border-radius: 0;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
+
+    &:hover {
+      background-color: @brandr-blue;
+      color: #fff;
+      cursor: pointer;
+    }
   }
 }
