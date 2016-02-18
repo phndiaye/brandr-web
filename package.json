@@ -48,6 +48,7 @@
     "ember-export-application-global": "^1.0.2",
     "ember-i18n": "4.2.0",
     "ember-simple-auth": "1.0.1",
+    "liquid-fire": "0.23.0",
     "moment": "2.10.6"
   },
   "dependencies": {
