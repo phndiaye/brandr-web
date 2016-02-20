@@ -16,10 +16,9 @@ DashboardHuntsNewHuntItemsController = Ember.Controller.extend
 
     createHunt: ->
       _this = @
-      @get('model').save().then( (cooc) ->
-        _this.transitionToRoute('dashboard.hunts').then ( ->
-          location.reload()
-        )
+      @get('model').save().then( (hunt) ->
+        location.reload()
+        _this.transitionToRoute('dashboard.hunts.show', hunt.get('id'))
       )
 
 `export default DashboardHuntsNewHuntItemsController`
