@@ -1,6 +1,7 @@
 `import Ember from 'ember'`
 
 HuntAreaComponent = Ember.Component.extend
+  huntCreationStep: Ember.inject.service('hunt-creation-step')
   selectOnClick: true
 
   findPosition: (element) ->
@@ -16,7 +17,7 @@ HuntAreaComponent = Ember.Component.extend
     return { x: xPosition, y: yPosition }
 
   click: (e) ->
-    if e.target.tagName.toLowerCase() == 'img'
+    if e.target.tagName.toLowerCase() == 'img' && @get('huntCreationStep').get('currentStep') == 'hunt-items'
       imagePosition = @findPosition(e.currentTarget)
       left = ((e.clientX - imagePosition.x) / e.target.width) * 100
       top = ((e.clientY - imagePosition.y) / e.target.height) * 100

@@ -11,7 +11,7 @@ Hunt = DS.Model.extend {
 
   commentsCount: ( ->
     comments = 0
-    @get('huntItems').reduce((acc, huntItem)->
+    @get('huntItems').reduce((acc, huntItem) ->
       acc += huntItem.get('comments.length')
     , comments)
   ).property('huntItems.@each.comments')

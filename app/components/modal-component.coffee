@@ -10,7 +10,9 @@ ModalComponentComponent = Ember.Component.extend
       @sendAction('action', @get('back'))
 
   didInsertElement: ->
-    $("##{@get('elementId')}").modal()
+    $("##{@get('elementId')}").modal(
+      backdrop: 'static'
+    )
 
   willDestroyElement: ->
     $("##{@get('elementId')}").modal('hide')

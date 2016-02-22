@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    {{#hunt-area model=model selectOnClick=false action="addHuntItem"}}
+      <img src="{{model.image.data}}" />
+    {{/hunt-area}}
+
+    <div class="hunt-creation-actions pull-right">
+      <button {{action "cancel"}} class="btn btn-default">Cancel</button>
+      <button {{action "createHunt"}} class="btn btn-default"
+              disabled={{noHuntItems}}>
+        Hunt!
+      </button>
+    </div>
+  </div>
+</div>
